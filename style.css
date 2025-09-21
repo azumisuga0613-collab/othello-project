@@ -1,0 +1,67 @@
+body {
+  background: url(https://github.com/oasys-tech/Reversi-4/raw/main/background.jpg);
+}
+
+.container {
+  font-size: 0;
+}
+
+#title {
+  text-align: center;
+  color: antiquewhite;
+}
+
+#board {
+  margin: 5rem auto;
+  width: 40rem;
+  height: 40rem;
+  background-color: black;
+  outline: 1.5rem solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.board-row {
+  display: flex;
+}
+
+.square {
+  width: 5rem;
+  height: 5rem;
+  background-color: green;
+  box-shadow: none !important;
+  font-size: 2.5rem;
+  border: 1px solid black; /* ← ここで枠線を追加 */
+  transition: background 0.2s;
+}
+
+/* 石の色 */
+.square[data-owner="black"] {
+  color: black;
+}
+
+.square[data-owner="white"] {
+  color: white;
+}
+
+/* 置けないマス */
+.square.cant-select {
+  background-color: green !important;
+  cursor: default; /* 置けないマスは矢印カーソル */
+}
+
+/* 置けるマス */
+.square.can-select {
+  cursor: pointer;
+}
+
+/* 置けるマスだけ hover で明るく */
+.square.can-select:hover {
+  background-color: #7fff7f; /* 明るい緑などお好みで */
+}
+
+#controller {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+}
